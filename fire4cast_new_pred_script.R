@@ -13,7 +13,7 @@ clim=read.csv("clim_example.csv",header=T,stringsAsFactors = F)
 #function to make the predictions based on the rule set
 rulepred=function(rules,clim){
   varnames=names(clim)
-  rules=rules[rules$xt*rulest$yt!=0,]
+  rules=rules[rules$xt*rules$yt!=0,]
   predmat=matrix(data=0,nrow=nrow(clim),ncol=nrow(rules)+1)
   for (i in 1:nrow(rules)){
     v1=which(varnames==rules$x[i])
